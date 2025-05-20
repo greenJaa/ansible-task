@@ -1,0 +1,21 @@
+#############################################
+#DEveloped by: Oleg Ischouk
+#Purpose: ansible practice
+#Date: 20.05.2025
+#Version: 0.0.1
+#############################################
+
+
+---
+-
+  hosts: all
+  user: docker 
+  tasks:
+    - name: copy script to all hosts
+      copy:
+        src: ./helloworld.sh
+        dest: /tmp/helloworld.sh
+        mode: 0755
+    - name: execute script
+      command: /tmp/helloworld.sh
+...
